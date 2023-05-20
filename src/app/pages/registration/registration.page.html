@@ -1,0 +1,21 @@
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Register</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form #registerForm="ngForm">
+        <ion-item>
+          <ion-label>Email</ion-label>
+          <ion-input type="email" name="email" ngModel></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Password</ion-label>
+          <ion-input type="password" name="password" ngModel></ion-input>
+        </ion-item>
+
+        <ion-button type="submit" expand="full">Register</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
