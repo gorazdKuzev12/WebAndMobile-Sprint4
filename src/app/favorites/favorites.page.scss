@@ -1,0 +1,18 @@
+ion-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    max-width: 100px; // adjust this value to your liking
+    max-height: 100px; // adjust this value to your liking
+    object-fit: cover;
+  }
+}
+ion-grid {
+  display: flex;
+  justify-content: center;
+}
+
+ion-row {
+  justify-content: center;
+}

@@ -1,6 +1,8 @@
+// home.page.ts
 import { Component } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { AngularFireDatabase } from '@angular/fire/compat/database';
+import { AlertController } from '@ionic/angular';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Component({
   selector: 'app-registration',
@@ -8,26 +10,47 @@ import { AngularFireDatabase } from '@angular/fire/compat/database';
   styleUrls: ['registration.page.scss'],
 })
 export class RegistrationPage {
+  name: string = '';
+  surname: string = '';
+  email: string = '';
+  password: string = '';
+
   constructor(
-    private afAuth: AngularFireAuth,
-    private db: AngularFireDatabase
+    public afAuth: AngularFireAuth,
+    private afs: AngularFirestore,
+    public alertController: AlertController
   ) {}
 
-  register(email: string, password: string) {
-    this.afAuth
-      .createUserWithEmailAndPassword(email, password)
-      .then((res) => {
-        // Registration successful
-        console.log(res);
-        // Create a reference to the user's profile in the database
-        let userRef = this.db.list('users').push({
-          email: email,
-          // remove the password here
+  async register() {
+    const { name, surname, email, password } = this;
+    try {
+      const res = await this.afAuth.createUserWithEmailAndPassword(
+        email,
+        password
+      );
+
+      if (res.user) {
+        // Save additional user data in Firestore
+        await this.afs.collection('users').doc(res.user.uid).set({
+          name,
+          surname,
+          email,
         });
-      })
-      .catch((error) => {
-        // Handle Errors
-        console.log(error);
-      });
+
+        this.showAlert('Success', 'Welcome aboard!');
+      }
+    } catch (err) {
+      console.dir(err);
+    }
+  }
+
+  async showAlert(header: string, message: string) {
+    const alert = await this.alertController.create({
+      header,
+      message,
+      buttons: ['Ok'],
+    });
+
+    await alert.present();
   }
 }

@@ -1,0 +1,24 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: black;
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  margin-bottom: 10px;
+}
+
+.footer-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.footer-year {
+  font-size: 16px;
+}

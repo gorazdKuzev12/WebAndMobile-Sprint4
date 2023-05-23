@@ -1,0 +1,55 @@
+ion-content {
+  ion-grid {
+    padding: 20px;
+    height: 100%;
+
+    ion-row {
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: stretch;
+
+      ion-col {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        margin-bottom: 20px;
+
+        ion-card {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+          img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+          }
+
+          ion-card-content {
+            width: 100%;
+            text-align: center;
+            height: 50px;
+            font-size: 1.2em;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+
+  ion-button {
+    --background: #3880ff;
+    --color: white;
+    --border-radius: 10px;
+    --padding-start: 20px;
+    --padding-end: 20px;
+    margin: 10px 0;
+    width: auto;
+    height: auto;
+    font-size: 11px;
+  }
+}

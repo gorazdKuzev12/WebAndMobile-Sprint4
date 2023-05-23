@@ -1,30 +1,66 @@
-<ion-content>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Register</ion-card-title>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Erasmus</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/profile" routerDirection="root">
+        Profile
+      </ion-button>
+      <ion-button (click)="logout()">Logout</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="white-background">
+  <ion-card class="main-img" class="white-background">
+    <ion-img src="../assets/home-page-imgs/main-img.jpg"></ion-img>
+    <ion-card-header class="white-background">
+      <ion-card-title class="news-title-res">Qué hay de nuevo</ion-card-title>
+      <div class="line-title"></div>
     </ion-card-header>
-    <ion-card-content>
-      <form (ngSubmit)="register()">
-        <ion-item>
-          <ion-label>Email</ion-label>
-          <ion-input
-            [(ngModel)]="email"
-            name="email"
-            type="email"
-            required
-          ></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label>Password</ion-label>
-          <ion-input
-            [(ngModel)]="password"
-            name="password"
-            type="password"
-            required
-          ></ion-input>
-        </ion-item>
-        <ion-button expand="full" type="submit">Register</ion-button>
-      </form>
+
+    <ion-card-content class="main-news">
+      <ion-row>
+        <ion-col>
+          <ion-card class="news-info-panel">
+            <ion-img src="../assets/home-page-imgs/news-students.jpg"></ion-img>
+            <ion-card-content class="news-info-desc">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s,when an unknown printer took a galley of type
+              and scrambled it to make a type specimen book. It has survived not
+              only five centuries, but also the leap into electronic
+              typesetting, remaining essentially unchanged
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col>
+          <ion-card class="news-info-panel">
+            <ion-img src="../assets/home-page-imgs/news-travel.jpg"></ion-img>
+            <ion-card-content class="news-info-desc">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s,when an unknown printer took a galley of type
+              and scrambled it to make a type specimen book. It has survived not
+              only five centuries, but also the leap into electronic
+              typesetting, remaining essentially unchanged
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col>
+          <ion-card class="news-info-panel">
+            <ion-img src="../assets/home-page-imgs/news-vlog.png"></ion-img>
+            <ion-card-content class="news-info-desc">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s,when an unknown printer took a galley of type
+              and scrambled it to make a type specimen book. It has survived not
+              only five centuries, but also the leap into electronic
+              typesetting, remaining essentially unchanged
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
     </ion-card-content>
   </ion-card>
+  <app-footer></app-footer>
 </ion-content>

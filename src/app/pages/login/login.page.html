@@ -3,10 +3,10 @@
     <div class="content-wrapper">
       <ion-card>
         <ion-card-header>
-          <ion-card-title>Register</ion-card-title>
+          <ion-card-title>Login</ion-card-title>
         </ion-card-header>
         <ion-card-content>
-          <form (ngSubmit)="register()">
+          <form (ngSubmit)="login()">
             <ion-item>
               <ion-label>Email</ion-label>
               <ion-input
@@ -25,27 +25,14 @@
                 required
               ></ion-input>
             </ion-item>
-            <ion-item>
-              <ion-label>Name</ion-label>
-              <ion-input
-                [(ngModel)]="name"
-                name="name"
-                type="text"
-                required
-              ></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label>Surname</ion-label>
-              <ion-input
-                [(ngModel)]="surname"
-                name="surname"
-                type="text"
-                required
-              ></ion-input>
-            </ion-item>
-
-            <ion-button expand="full" type="submit">Register</ion-button>
+            <ion-button expand="full" type="submit">Login</ion-button>
           </form>
+          <ion-button expand="full" color="secondary" (click)="goToRegister()"
+            >Register</ion-button
+          >
+          <div *ngIf="errorMessage" class="error-message">
+            {{ errorMessage }}
+          </div>
         </ion-card-content>
       </ion-card>
     </div>
