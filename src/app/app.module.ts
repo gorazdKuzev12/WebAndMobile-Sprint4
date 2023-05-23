@@ -10,6 +10,7 @@ import { IonicModule } from '@ionic/angular';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from '../environments/environment';
+import { CountryService } from './services/country.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +21,7 @@ import { environment } from '../environments/environment';
     AngularFireModule.initializeApp(environment.firebaseConfig), // initialize Firebase
     AngularFireAuthModule,
   ],
-  providers: [],
+  providers: [CountryService], // Provide the service here
   bootstrap: [AppComponent],
 })
 export class AppModule {}
