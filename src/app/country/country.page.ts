@@ -2,7 +2,7 @@ import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CountryService } from '../services/country.service'; // <-- Import the service
+import { CountryService } from '../services/country.service'; 
 
 import { map } from 'rxjs/operators';
 

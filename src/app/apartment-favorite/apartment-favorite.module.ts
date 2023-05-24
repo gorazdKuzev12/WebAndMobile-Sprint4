@@ -15,6 +15,6 @@ import { ApartmentFavoritePage } from './apartment-favorite.page';
     IonicModule,
     ApartmentFavoritePageRoutingModule
   ],
-  declarations: [ApartmentFavoritePage]
+  declarations: [ApartmentFavoritePage] // the declarations
 })
 export class ApartmentFavoritePageModule {}
