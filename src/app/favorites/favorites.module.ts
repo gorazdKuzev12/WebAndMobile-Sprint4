@@ -12,6 +12,6 @@ import { CountryService } from '../services/country.service';
 @NgModule({
   imports: [CommonModule, FormsModule, IonicModule, FavoritesPageRoutingModule],
   declarations: [FavoritesPage],
-  providers: [], // Remove the service from here
+  providers: [], 
 })
 export class FavoritesPageModule {}
