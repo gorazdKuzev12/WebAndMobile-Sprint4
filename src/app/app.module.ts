@@ -11,6 +11,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from '../environments/environment';
 import { CountryService } from './services/country.service';
+import { IonicStorageModule, Storage } from '@ionic/storage-angular'; // Import the module and the Storage interface
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,8 +21,9 @@ import { CountryService } from './services/country.service';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig), // initialize Firebase
     AngularFireAuthModule,
+    IonicStorageModule.forRoot(), // initialize IonicStorageModule
   ],
-  providers: [CountryService], // Provide the service here
+  providers: [CountryService, Storage], // Provide the service and Storage interface here
   bootstrap: [AppComponent],
 })
 export class AppModule {}
