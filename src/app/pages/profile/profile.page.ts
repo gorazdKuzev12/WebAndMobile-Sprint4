@@ -7,41 +7,21 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['profile.page.scss'],
 })
 export class ProfilePage {
-  newEmail: string = '';
-  oldPassword: string = '';
-  newPassword: string = '';
-  message: string = ''; // Variable to store the message
+  newName: string = '';
+  newSurname: string = '';
 
   constructor(private authService: AuthService) {}
 
-  changeEmail() {
-    if (this.newEmail.trim() !== '') {
-      this.authService
-        .changeEmail(this.newEmail)
-        .then(() => {
-          this.message = 'Email changed successfully'; // Set the success message
-        })
-        .catch((error) => {
-          this.message = 'Error changing email: ' + error.message; // Set the error message
-        });
-    }
+  changeNameSurname() {
+    this.authService.updateNameSurname(this.newName, this.newSurname);
   }
 
-  changePassword() {
-    if (this.oldPassword.trim() === '') {
-      this.message = 'Old password is required'; // Set the error message
-      return;
-    }
+  // Add these two methods
+  get name(): string {
+    return this.authService.name;
+  }
 
-    if (this.newPassword.trim() !== '') {
-      this.authService
-        .changePassword(this.newPassword)
-        .then(() => {
-          this.message = 'Password changed successfully'; // Set the success message
-        })
-        .catch((error) => {
-          this.message = 'Error changing password: ' + error.message; // Set the error message
-        });
-    }
+  get surname(): string {
+    return this.authService.surname;
   }
 }

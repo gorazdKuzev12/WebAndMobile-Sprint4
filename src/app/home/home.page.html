@@ -13,6 +13,20 @@
 <ion-content class="white-background">
   <ion-card class="main-img" class="white-background">
     <ion-img src="../assets/home-page-imgs/main-img.jpg"></ion-img>
+    <ion-card-title class="news-title-res">Apartments</ion-card-title>
+
+    <!-- home.page.html -->
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6" *ngFor="let apartment of apartments$ | async">
+          <ion-card (click)="onApartmentClick(apartment)">
+            <ion-img [src]="apartment.image"></ion-img>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
     <ion-card-header class="white-background">
       <ion-card-title class="news-title-res">Qué hay de nuevo</ion-card-title>
       <div class="line-title"></div>
