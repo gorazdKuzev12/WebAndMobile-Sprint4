@@ -1,45 +1,29 @@
 <ion-content>
   <div class="container">
-    <div class="content-wrapper">
-      <ion-card>
-        <ion-card-header>
-          <ion-card-title>Profile</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <ion-item>
-            <ion-label>Email</ion-label>
-            <ion-input type="email" [(ngModel)]="newEmail" required></ion-input>
-          </ion-item>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Profile</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Name: {{ name }}</p>
+        <p>Surname: {{ surname }}</p>
 
-          <ion-item>
-            <ion-label>Old Password</ion-label>
-            <ion-input
-              type="password"
-              [(ngModel)]="oldPassword"
-              required
-            ></ion-input>
-          </ion-item>
+        <ion-item>
+          <ion-label>New Name</ion-label>
+          <ion-input type="text" [(ngModel)]="newName" required></ion-input>
+        </ion-item>
 
-          <ion-item>
-            <ion-label>New Password</ion-label>
-            <ion-input
-              type="password"
-              [(ngModel)]="newPassword"
-              required
-            ></ion-input>
-          </ion-item>
+        <ion-item>
+          <ion-label>New Surname</ion-label>
+          <ion-input type="text" [(ngModel)]="newSurname" required></ion-input>
+        </ion-item>
 
-          <ion-button expand="full" (click)="changePassword()"
-            >Change Password</ion-button
-          >
-          <ion-button expand="full" routerLink="/" routerDirection="root"
-            >Return to Homepage</ion-button
-          >
+        <ion-button expand="full" (click)="changeNameSurname()"
+          >Change Name and Surname</ion-button
+        >
 
-          <div *ngIf="message" class="message">{{ message }}</div>
-          <!-- Display the message here -->
-        </ion-card-content>
-      </ion-card>
-    </div>
+        <!-- Other code here... -->
+      </ion-card-content>
+    </ion-card>
   </div>
 </ion-content>

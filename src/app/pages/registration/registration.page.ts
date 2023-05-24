@@ -2,7 +2,7 @@
 import { Component } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AlertController } from '@ionic/angular';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -17,8 +17,8 @@ export class RegistrationPage {
 
   constructor(
     public afAuth: AngularFireAuth,
-    private afs: AngularFirestore,
-    public alertController: AlertController
+    public alertController: AlertController,
+    private router: Router
   ) {}
 
   async register() {
@@ -29,18 +29,11 @@ export class RegistrationPage {
         password
       );
 
-      if (res.user) {
-        // Save additional user data in Firestore
-        await this.afs.collection('users').doc(res.user.uid).set({
-          name,
-          surname,
-          email,
-        });
-
-        this.showAlert('Success', 'Welcome aboard!');
-      }
+      this.showAlert('Success', 'Welcome aboard!');
+      this.router.navigate(['/home']);
     } catch (err) {
       console.dir(err);
+      // this.showAlert('Error', err.message);
     }
   }
 

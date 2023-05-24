@@ -34,6 +34,24 @@ export class AuthService {
     });
   }
 
+  private _name: string = 'Gorazd';
+  private _surname: string = 'Kuzev';
+
+  // Accessor methods for name and surname
+  get name(): string {
+    return this._name;
+  }
+
+  get surname(): string {
+    return this._surname;
+  }
+
+  // Method to update name and surname locally
+  updateNameSurname(name: string, surname: string): void {
+    this._name = name;
+    this._surname = surname;
+  }
+
   changePassword(newPassword: string): Promise<void> {
     return this.afAuth.currentUser.then((user) => {
       if (user) {

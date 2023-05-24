@@ -1,0 +1,9 @@
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let apartment of favoriteApartments$ | async">
+      <ion-img [src]="apartment.image"></ion-img>
+      <p>{{ apartment.address }}</p>
+      <p></p
+    ></ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,21 @@
+<ion-content>
+  <ion-grid *ngIf="apartment">
+    <ion-row>
+      <ion-col size="12" size-md="8" offset-md="2">
+        <ion-card>
+          <img [src]="apartment.image" />
+          <ion-card-content>
+            <p>Adress:{{apartment.address}}</p>
+            <p>Phone Number +34 {{apartment.phoneNumber}}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-button expand="full" (click)="addToFavorites()"
+    >Add to Favorites</ion-button
+  >
+  <ion-button expand="full" routerLink="/apartment-favorite"
+    >View Favorites</ion-button
+  >
+</ion-content>
