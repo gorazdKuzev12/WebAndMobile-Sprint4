@@ -6,7 +6,6 @@ import { of } from 'rxjs';
 interface Apartment {
   image: string;
   address: string;
-  // Add other properties as necessary
 }
 
 @Component({
